@@ -1,0 +1,265 @@
+/* Loading Spinner Styles */
+#loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #00003b;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the spinner appears on top of other elements */
+}
+
+.spinner {
+  border: 4px solid #00003b;
+  border-top: 4px solid #00BCD4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Macondo', cursive;
+}
+
+body {
+  background-image: url(images/duotone.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* This keeps the background fixed while scrolling */
+}
+
+
+
+.container {
+  font-size: 30px;
+  background-color: #00BCD4;
+  width: 90vw;
+  max-width: 34em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 3em;
+  border-radius: 0.6em;
+  box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+}
+
+#options-container h3 {
+  text-align: center;
+  font-family: 'Neonderthaw', cursive;
+}
+
+#options-container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0 2.4em 0;
+  margin-top: 2.5em;
+}
+
+#options-container button {
+  padding: 0.6em 1.2em;
+  border: 1px solid #00003b;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0.3em;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-family: 'Macondo', cursive;
+  font-size: 20px;
+}
+
+#options-container button:disabled {
+  border: 1px solid #808080;
+  color: #808080;
+  background-color: #efefef;
+}
+
+#options-container button.active {
+  background-color: #00003b;
+  border: 1px solid #000000;
+  color: #fff;
+}
+
+.letter-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+#letter-container button {
+  height: 2.4em;
+  width: 2.4em;
+  border-radius: 0.3em;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-family: 'Macondo', cursive;
+}
+
+
+.new-game-popup {
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.6em;
+}
+
+#user-input-section {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  margin: 0.6em 0 1.2em 0;
+}
+
+/* Style for the background image */
+#canvas {
+  background-image: url(images/HangmanBkg.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border: none; /* Remove the border */
+}
+
+#result-text h2 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+#result-text p {
+  font-size: 1.25em;
+  margin: 1em 0 2em 0;
+  font-family: 'Macondo', cursive;
+}
+
+#result-text span {
+  font-weight: 600;
+  font-family: 'Macondo', cursive;
+}
+
+#new-game-button {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+  background-color: #00003b;
+  border: 3px solid #000000;
+  color: #fff;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-family: 'Neonderthaw', cursive;
+}
+
+.win-msg {
+  color: #39d78d;
+  font-family: 'Neonderthaw', cursive;
+}
+
+.lose-msg {
+  color: #fe5152;
+  font-family: 'Neonderthaw', cursive;
+}
+
+.hide {
+  display: none;
+}
+ 
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 600px) {
+  #options-container h3 {
+    /* Adjust the font size for the heading on mobile devices */
+    font-size: 28px;
+    margin-top: -3em;
+  }
+
+  #options-container div {
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 0.5em;
+    margin-bottom: -2em;
+  }
+
+  #options-container button {
+    /* button size */
+    padding: 0.8em 1.6em;
+    font-size: 12px;
+    margin: 6px;
+    padding: 8px;
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
+
+  .letter-container {
+    /* letter container layout */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    width: 88vw;
+    margin-top: 2.2em;
+    margin-left: -2.9em;
+    margin-bottom: -0.4em;
+  }
+
+  #letter-container button {
+    /* letter button size */
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  #letter-container button:disabled {
+    /* change the opacity for tried letters */
+    opacity: 0.5;
+  }
+
+  #user-input-section {
+    font-size: 25px;
+    margin-bottom: -0.2em;
+  }
+
+  #result-text p {
+    
+    text-align: center;
+  }
+
+  #result-text span {
+    display: block;
+    
+  }
+
+  /* background size */
+  #canvas {
+    background-size: contain;
+    background-position: center;
+    height: 45vh;
+    width: 55vw;
+    margin-bottom: -3em;
+    
+    margin-left: -0.8em;
+  }
+}
